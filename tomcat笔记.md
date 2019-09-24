@@ -1,10 +1,20 @@
 # tomcat笔记
 
+## 参考文献
+
+```http
+http://objcoding.com/2019/05/30/tomcat-architecture/ 聊聊Tomcat的架构设计
+
+
+```
+
+
+
 ## 总体架构概览
 
 - 划分成 container（容器） 与 connector （链接器）
 
-  ![](C:\Users\Administrator\Desktop\tomcat_3.png)
+  ![](https://raw.githubusercontent.com/objcoding/objcoding.github.io/master/images/tomcat_3.png)
 
     																	w-工作流程图						
   - 在上图中 一个tomcat server 可以包含 多个service， 而 connector 与 container 又包含在service中，service服务中可存在 多个连接器 已支持多种网络协议（如http1，HTTP2，ajp.
