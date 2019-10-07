@@ -25,3 +25,8 @@ https://juejin.im/post/5af176196fb9a07ac90d2ac8  tomcat 源码分析
 - 入口点：
   - 启动类：Catalina.startup.bootstrap
   - 启动过程：
+  
+- connector
+
+  	- 调用地点：Catalina.createStartDigester？
+  	- 浏览至 Acceptor org.apache.tomcat.util.net.NioEndpoint;
