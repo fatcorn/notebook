@@ -11,6 +11,15 @@ https://juejin.im/post/5af176196fb9a07ac90d2ac8  tomcat 源码分析
 
 
 
+## 关联知识
+
+~~~http
+1、队列式同步器 AbstractQueuedSynchronizer https://juejin.im/post/5c3ac10351882524bb0b337f
+
+~~~
+
+
+
 ## 总体架构概览
 
 - 划分成 container（容器） 与 connector （链接器）
@@ -29,4 +38,5 @@ https://juejin.im/post/5af176196fb9a07ac90d2ac8  tomcat 源码分析
 - connector
 
   	- 调用地点：Catalina.createStartDigester？
-  	- 浏览至 Acceptor org.apache.tomcat.util.net.NioEndpoint;
+  	- 三大线程：Acceptor、Pollor、Worker
+  	- 浏览至 Acceptor org.apache.tomcat.util.net.NioEndpoint poller;
