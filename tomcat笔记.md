@@ -24,7 +24,7 @@ https://juejin.im/post/5af176196fb9a07ac90d2ac8  tomcat 源码分析
 
 - 划分成 container（容器） 与 connector （链接器）
 
-  ![](https://raw.githubusercontent.com/objcoding/objcoding.github.io/master/images/tomcat_3.png)
+  ![https://github.com/fatcorn/notebook/blob/master/%E8%B5%84%E6%BA%90/tomcat%20%E6%B5%81%E7%A8%8B%E5%9B%BE.png]()
 
     																	w-工作流程图						
   - 在上图中 一个tomcat server 可以包含 多个service， 而 connector 与 container 又包含在service中，service服务中可存在 多个连接器 已支持多种网络协议（如http1，HTTP2，ajp.
@@ -38,5 +38,7 @@ https://juejin.im/post/5af176196fb9a07ac90d2ac8  tomcat 源码分析
 - connector
 
   	- 调用地点：Catalina.createStartDigester？
-  	- 三大线程：Acceptor、Pollor、Worker
+  	
+   - 三大线程：Acceptor、Pollor、Worker
+
   	- 浏览至 Acceptor org.apache.tomcat.util.net.NioEndpoint poller;
