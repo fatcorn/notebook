@@ -40,11 +40,27 @@ https://juejin.im/post/5af176196fb9a07ac90d2ac8  tomcat 源码分析
   	- 调用地点：Catalina.createStartDigester？
   	- 三大线程：Acceptor、Pollor、Worker
   	- Acceptor 
-  	  - 主要工作：负责接受TCP请求（socket）
-  	  - 位置：org.apache.tomcat.util.net.Acceptor
-  	  - 启动地点：org.apache.tomcat.util.net.AprEndpoint.startInternal()
-  	  - 待完成项：Acceptor 第83行  endpoint.countUpOrAwaitConnection(); 原理分析
-  	  - 代码分析:
-  	  - 浏览至： Accept  95 行
-  	
+    	  - 主要工作：负责接受TCP请求（socket）
+      
+    	  - 位置：org.apache.tomcat.util.net.Acceptor
+    
+      	  - 启动地点：org.apache.tomcat.util.net.AprEndpoint.startInternal()
+        	  -
+      	  - 待完成项：
+        	  -
+      Acceptor 第83行  endpoint.countUpOrAwaitConnection(); 原理分析
+      
+      	  - 关键代码:
+        	  -
+      ```java
+      Acceptor: 
+      	// socket 是一个SocketChannel对象，对应一个tcp连接
+      	95 			socket = endpoint.serverSocketAccept();
+      		...
+          // 将socket请求交给Pollor
+          115         if (!endpoint.setSocketOptions(socket)) {
+      ```
+      
+       -  浏览至： Accept  115行
+  
   	- 浏览至 Acceptor org.apache.tomcat.util.net.NioEndpoint poller;
